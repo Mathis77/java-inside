@@ -24,7 +24,7 @@ resolver.
 
 docer.
     quiet(true).
-    link(uri("https://docs.oracle.com/javase/9/docs/api/"))
+    link(uri("https://download.java.net/java/early_access/jdk11/docs/api/"))
    
 packager.
     modules(
