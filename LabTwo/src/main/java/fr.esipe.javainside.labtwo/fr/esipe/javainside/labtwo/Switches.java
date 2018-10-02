@@ -8,6 +8,14 @@ package fr.esipe.javainside.labtwo;
  * 			1 : <ligne instruction pour le cas 1>
  * 			...
  * 		}
+ * 
+ * Pour le intSwitch2 :
+ * 		lookupswitch {
+ * 			...
+ * 		}
+ * 
+ * Le "tableswitch" c'est lorsque les nombres se suivent et donc la machine virtuelle peut pointer directement sur le bon case.
+ * Le "lookupswitch" trie les nombres pour pouvoir utiliser ensuite la dichotomie pour trouver le bon case.
  */
 
 public final class Switches {
