@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"fr.esipe.javainside.labtwo","c":"Switches","l":"intSwitch(int)"},{"p":"fr.esipe.javainside.labtwo","c":"Main","l":"Main()","url":"%3Cinit%3E()"},{"p":"fr.esipe.javainside.labtwo","c":"Main","l":"main(String[])","url":"main(java.lang.String[])"},{"p":"fr.esipe.javainside.labtwo","c":"Switches","l":"Switches()","url":"%3Cinit%3E()"}]
