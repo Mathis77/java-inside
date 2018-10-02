@@ -4,12 +4,16 @@ jdk: openjdk11
 # https://github.com/travis-ci/travis-ci/issues/8408
 before_install:
   - unset _JAVA_OPTIONS
+  
+matrix:
+  include:
+  - env: FOLDER="LabOne"
+  - env: FOLDER="LabTwo"
 
-env: 
-  - PRO_SPECIAL_BUILD='early-access'
+env: PRO_SPECIAL_BUILD='early-access'
 
 install:
-  - cd LabOne
+  - cd $FOLDER
   - java pro_wrapper.java version
 
 script:
