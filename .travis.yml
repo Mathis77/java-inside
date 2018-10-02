@@ -5,8 +5,10 @@ jdk: openjdk11
 before_install:
   - unset _JAVA_OPTIONS
 
+env: 
+  - PRO_SPECIAL_BUILD='early-access'
+
 install:
-  - env: PRO_SPECIAL_BUILD='early-access'
   - cd lab01
   - java pro_wrapper.java version
 
