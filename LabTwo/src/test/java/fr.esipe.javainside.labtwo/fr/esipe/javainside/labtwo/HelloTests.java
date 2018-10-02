@@ -10,6 +10,6 @@ class HelloTests {
   
   @Test
   void test() {
-    System.out.println("Hello test !");
+    System.out.println("TEST LABTWO");
   }
 }
