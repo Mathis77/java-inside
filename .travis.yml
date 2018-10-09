@@ -10,6 +10,7 @@ matrix:
   - env: FOLDER="LabOne" PRO_SPECIAL_BUILD='early-access'
   - env: FOLDER="LabTwo" PRO_SPECIAL_BUILD='early-access'
   - env: FOLDER="LabThree" PRO_SPECIAL_BUILD='early-access'
+  - env: FOLDER="consise-method" PRO_SPECIAL_BUILD="early-access-amber'
 
 # env: PRO_SPECIAL_BUILD='early-access'
 
