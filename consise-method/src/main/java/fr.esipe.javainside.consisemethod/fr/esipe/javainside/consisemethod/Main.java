@@ -7,6 +7,7 @@ public class Main {
   	System.out.println(getNameDay(1));
   	System.out.println(toUpperCase("coucou"));
   	System.out.println(parseInt("5"));
+  	System.out.println(incrementInt(5));
   	display("salut");
   }
 }

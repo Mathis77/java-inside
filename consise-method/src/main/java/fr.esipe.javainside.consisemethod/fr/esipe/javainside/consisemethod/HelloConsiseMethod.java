@@ -13,6 +13,8 @@ class HelloConsiseMethod {
 		default -> throw new IllegalArgumentException("You need to specify a number between 1 and 7 !");
 	};
 
+	public static int incrementInt(int i) -> i+1;
+
 	public static String toUpperCase(String arg) = String::toUpperCase;
 
 	public static int parseInt(String number) = Integer::parseInt;
