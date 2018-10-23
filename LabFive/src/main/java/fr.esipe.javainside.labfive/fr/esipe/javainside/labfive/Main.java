@@ -1,21 +1,36 @@
 package fr.esipe.javainside.labfive;
 
-import static java.util.function.Predicate.not;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.UndeclaredThrowableException;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import fr.esipe.javainside.labfive.annotations.JSONProperty;
+
 public class Main {
 
+//	WITHOUT ANNOTATION
+//	
+//	public static String toJSON(Object o) {
+//		return Arrays.stream(o.getClass().getMethods())
+//					.filter(not(Main::isObjectGetClass))
+//					.filter(Main::isGetter)
+//					.map(method -> format(o, method))
+//					.collect(Collectors.joining("\n", "{\n", "\n}\n"));
+//	}
+	
+	// WITH ANNOTATION
+	
 	public static String toJSON(Object o) {
 		return Arrays.stream(o.getClass().getMethods())
-					.filter(not(Main::isObjectGetClass))
-					.filter(Main::isGetter)
+					.filter(Main::isMethodAnnotedByJSONProperty)
 					.map(method -> format(o, method))
 					.collect(Collectors.joining("\n", "{\n", "\n}\n"));
+	}
+	
+	private static boolean isMethodAnnotedByJSONProperty(Method m) {
+		return m.isAnnotationPresent(JSONProperty.class);
 	}
 	
 	private static boolean isObjectGetClass(Method m) {

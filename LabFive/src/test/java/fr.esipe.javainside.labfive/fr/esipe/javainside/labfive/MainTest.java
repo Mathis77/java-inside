@@ -6,6 +6,8 @@ import java.util.Objects;
 
 import org.junit.jupiter.api.Test;
 
+import fr.esipe.javainside.labfive.annotations.JSONProperty;
+
 class MainTest {
 
 	@Test
@@ -14,6 +16,7 @@ class MainTest {
 		assertEquals(person.toJSON(), Main.toJSON(person));
 	}
 	
+	@Test
 	void testToJSONObjectAlien() {
 		var alien = new Alien("E.T.", 100);
 		assertEquals(alien.toJSON(), Main.toJSON(alien));
@@ -33,10 +36,12 @@ class MainTest {
 					+ lastName + "\"\n" + "}\n";
 		}
 
+		@JSONProperty
 		public String getFirstName() {
 			return firstName;
 		}
 
+		@JSONProperty
 		public String getLastName() {
 			return lastName;
 		}
@@ -55,14 +60,16 @@ class MainTest {
 		}
 		
 		public String toJSON() {
-			return "{\n" + "  \"planet\": \"" + planet + "\"\n" + "  \"members\": \"" + age + "\"\n"
+			return "{\n" + "  \"planet\": \"" + planet + "\"\n" + "  \"age\": \"" + age + "\"\n"
 					+ "}\n";
 		}
 
+		@JSONProperty
 		public String getPlanet() {
 			return planet;
 		}
 
+		@JSONProperty
 		public int getAge() {
 			return age;
 		}
