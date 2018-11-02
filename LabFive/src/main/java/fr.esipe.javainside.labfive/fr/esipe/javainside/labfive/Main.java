@@ -29,6 +29,11 @@ public class Main {
 					.collect(Collectors.joining("\n", "{\n", "\n}\n"));
 	}
 	
+	private static Method[] getMethodsFromCache(Object o) {
+		// TODO : Class value ...
+		return null;
+	}
+	
 	private static boolean isMethodAnnotedByJSONProperty(Method m) {
 		return m.isAnnotationPresent(JSONProperty.class);
 	}
@@ -37,8 +42,20 @@ public class Main {
 		return m.getDeclaringClass() == Object.class && m.getName().equals("getClass");
 	}
 	
+//	private static String format(Object o, Method m) {
+//		return "  \""+propertyName(m.getName())+"\": \""+getValue(o, m)+"\"";
+//	}
+	
 	private static String format(Object o, Method m) {
-		return "  \""+propertyName(m.getName())+"\": \""+getValue(o, m)+"\"";
+		return "  \""+propertyName(getNameFromEitherJSONPropertyOrMethod(m))+"\": \""+getValue(o, m)+"\"";
+	}
+	
+	private static String getNameFromEitherJSONPropertyOrMethod(Method m) {
+		var methodName = m.getAnnotation(JSONProperty.class).methodName();
+		if("N/A".equals(methodName)) {
+			return m.getName();
+		}
+		return methodName;
 	}
 	
 	private static boolean isGetter(Method m) {

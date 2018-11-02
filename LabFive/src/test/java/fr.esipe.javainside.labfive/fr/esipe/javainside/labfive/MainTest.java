@@ -36,8 +36,9 @@ class MainTest {
 					+ lastName + "\"\n" + "}\n";
 		}
 
-		@JSONProperty
-		public String getFirstName() {
+		
+		@JSONProperty(methodName = "getFirstName")
+		public String titi() {
 			return firstName;
 		}
 
